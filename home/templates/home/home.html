@@ -1,0 +1,24 @@
+{% extends 'home/base.html' %}
+{% load static %}
+{% block content %}
+    <div class="container">
+        <br>
+        <div class="row text-center">
+            <div class="col-md-12">
+                <a href="{% url 'input_barang' %}" class="btn btn-primary btn-lg">Input Barang</a>
+            </div>
+        </div>
+        <div class="row box-home text-center">
+        {% for home_barang in home_barangs %}
+            <div class="col-md-4">
+                <img class="home-logo" src="{{home_barang.picture}}" alt="learn-html">
+                <p style="text-align:left">{{home_barang.nama}}</p>
+                <p style="text-align:left">{{home_barang.harga}}</p>
+                <p style="text-align:left" class="text-primary"><a href="{% url 'barang_detail' barang_id=home_barang.id %}">Lihat Details</a></p>
+            </div>
+        {% endfor %}
+        </div>
+    </div>
+    <br><br>
+
+{% endblock %}

@@ -1,0 +1,25 @@
+{% extends 'home/base.html' %}
+{% load static %}
+{% block content %}
+    <div class="container">
+        <div class="row box-home text-center">
+            <div class="col-md-12">
+                <img class="" style="width: 440px" src="{{barang.picture}}" alt="kendala-sepulsa">
+            </div>
+        </div>
+        <div class="row">    
+            <div class="barang_detail">
+                <h2 style="text-align:left">{{barang.nama}}</h2>
+                <p style="text-align:left; color:green;">{{barang.harga}}</p>
+                <p style="text-align:left">Deskripsi Produk:</p>
+                <ul style="text-align:left">
+                    <li>
+                        {{barang.deskripsi}}
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <br><br>
+
+{% endblock %}
